@@ -1,0 +1,20 @@
+<div *ngFor="let question of questions" class="question-container" [ngClass]="{'correct-answer': results[question.questionId], 'incorrect-answer': incorrectAttempts[question.questionId] && !results[question.questionId]}">
+  <h4>{{ question.question }}</h4>
+  <ul>
+    <li *ngFor="let choice of question.answerChoices; let i = index">
+      <label>
+        <input type="radio"
+               name="{{ question.questionId }}"
+               [(ngModel)]="selectedAnswers[question.questionId]"
+               [value]="choice"
+               [attr.disabled]="results[question.questionId] ? true : null" />
+        {{ choice }}
+      </label>
+    </li>
+  </ul>
+
+  <button (click)="submitAnswer(question.questionId, selectedAnswers[question.questionId])"
+          [attr.disabled]="results[question.questionId] ? true : null">
+    {{ results[question.questionId] ? 'Correct!' : (incorrectAttempts[question.questionId] ? 'Incorrect, Try Again' : 'Submit Answer') }}
+  </button>
+</div>
