@@ -10,9 +10,11 @@ Make sure you have the following installed on your machine:
 - Angular CLI 
 - Java Development Kit (JDK) 
 - Maven 
+- Docker (Optional)
 
 Download/clone this repo
 
+# Option 1
 ## Running the Backend (Spring Boot)
 
 1. Navigate to the `triviabackend` directory.
@@ -32,6 +34,12 @@ Download/clone this repo
     npm install
     ng serve
 3. The frontend will be accessible at http://localhost:4200.
+
+# Option 2
+1. Using the provided docker-compose.yml
+2. Run the following command
+    ```bash
+    docker compose up -d
 
 ## Answer the questions
 1. Go to  http://localhost:4200
