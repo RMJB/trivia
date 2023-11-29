@@ -1,7 +1,6 @@
 package nl.rmjb.triviabackend.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import nl.rmjb.triviabackend.models.*;
 import nl.rmjb.triviabackend.services.TriviaService;
 import nl.rmjb.triviabackend.views.*;
 import org.junit.jupiter.api.Test;
@@ -17,7 +16,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @SpringBootTest
@@ -32,7 +30,6 @@ class TriviaControllerTest {
 
     @Test
     void getQuestions() throws Exception {
-        // Mock the behavior of triviaService
         List<FormattedQuestion> mockFormattedQuestions = Arrays.asList(
                 new FormattedQuestion(UUID.randomUUID(), "Question 1", Arrays.asList("A", "B", "C", "D")),
                 new FormattedQuestion(UUID.randomUUID(), "Question 2", Arrays.asList("Z", "X", "C", "V")),
@@ -42,7 +39,6 @@ class TriviaControllerTest {
         );
         Mockito.when(triviaService.getFormattedQuestions(Mockito.anyList())).thenReturn(mockFormattedQuestions);
 
-        // Perform the request and validate the response
         mockMvc.perform(MockMvcRequestBuilders.get("/api/trivia/questions"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].question").value("Question 1"))

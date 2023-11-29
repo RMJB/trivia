@@ -19,8 +19,6 @@ public class Question {
     public Question(String question, String answer, List<String> incorrectAnswers) {
         this.question = StringEscapeUtils.unescapeHtml4(question);
         this.answer = StringEscapeUtils.unescapeHtml4(answer);
-
-        // Decode HTML entities for each incorrect answer
         this.incorrectAnswers = incorrectAnswers.stream()
                 .map(StringEscapeUtils::unescapeHtml4)
                 .collect(Collectors.toList());
