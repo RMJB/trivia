@@ -15,7 +15,7 @@ export class QuestionListComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/questions').subscribe(
+    this.http.get<any[]>('http://localhost:8080/api/trivia/questions').subscribe(
       (data) => {
         this.questions = data;
       },
@@ -29,7 +29,7 @@ export class QuestionListComponent implements OnInit {
     console.log('Submitting answer for question:', questionId, ' - Selected answer:', selectedAnswer);
 
     if (selectedAnswer && questionId) {
-      const apiUrl = `http://localhost:8080/checkanswers`;
+      const apiUrl = `http://localhost:8080/api/trivia/checkanswers`;
       const payload = { questionId, answer: selectedAnswer };
 
       this.http.post<any>(apiUrl, payload).subscribe(
