@@ -17,11 +17,13 @@ public class Question {
     private List<String> answerChoices;
 
     public Question(String question, String answer, List<String> incorrectAnswers) {
+        this.questionId = UUID.randomUUID();
         this.question = StringEscapeUtils.unescapeHtml4(question);
         this.answer = StringEscapeUtils.unescapeHtml4(answer);
         this.incorrectAnswers = incorrectAnswers.stream()
                 .map(StringEscapeUtils::unescapeHtml4)
                 .collect(Collectors.toList());
+        this.setAnswerChoices(this.incorrectAnswers, answer);
     }
 
     public UUID getQuestionId() {

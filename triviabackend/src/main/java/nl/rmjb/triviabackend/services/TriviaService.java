@@ -27,8 +27,8 @@ public class TriviaService {
                             questionRaw.getQuestion(),
                             questionRaw.getCorrect_answer(),
                             questionRaw.getIncorrect_answers());
-                    question.setAnswerChoices(question.getIncorrectAnswers(), question.getAnswer());
-                    question.setQuestionId();
+                    //question.setAnswerChoices(question.getIncorrectAnswers(), question.getAnswer());
+                    //question.setQuestionId();
                     return question;
                 })
                 .collect(Collectors.toList());
