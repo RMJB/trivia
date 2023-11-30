@@ -1,7 +1,11 @@
 package nl.rmjb.triviabackend.controllers;
-import nl.rmjb.triviabackend.models.*;
-import nl.rmjb.triviabackend.views.*;
+
+import nl.rmjb.triviabackend.models.Question;
+import nl.rmjb.triviabackend.models.QuestionListAPI;
 import nl.rmjb.triviabackend.services.TriviaService;
+import nl.rmjb.triviabackend.views.AnswerPayload;
+import nl.rmjb.triviabackend.views.FormattedQuestion;
+import nl.rmjb.triviabackend.views.QuestionAnswer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

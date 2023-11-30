@@ -3,8 +3,8 @@ package nl.rmjb.triviabackend.views;
 import java.util.UUID;
 
 public class QuestionAnswer {
-    private UUID questionId;
-    private String answer;
+    private final UUID questionId;
+    private final String answer;
 
     public QuestionAnswer(UUID questionId, String answer) {
         this.questionId = questionId;

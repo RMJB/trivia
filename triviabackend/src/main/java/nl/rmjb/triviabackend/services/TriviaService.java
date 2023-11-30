@@ -1,7 +1,9 @@
 package nl.rmjb.triviabackend.services;
 
-import nl.rmjb.triviabackend.models.*;
-import nl.rmjb.triviabackend.views.*;
+import nl.rmjb.triviabackend.models.Question;
+import nl.rmjb.triviabackend.models.QuestionListAPI;
+import nl.rmjb.triviabackend.views.FormattedQuestion;
+import nl.rmjb.triviabackend.views.QuestionAnswer;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,8 +29,6 @@ public class TriviaService {
                             questionRaw.getQuestion(),
                             questionRaw.getCorrect_answer(),
                             questionRaw.getIncorrect_answers());
-                    //question.setAnswerChoices(question.getIncorrectAnswers(), question.getAnswer());
-                    //question.setQuestionId();
                     return question;
                 })
                 .collect(Collectors.toList());

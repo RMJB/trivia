@@ -1,15 +1,14 @@
 package nl.rmjb.triviabackend.models;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import org.apache.commons.text.StringEscapeUtils;
-
 public class Question {
-    //UUID instead or integer id
     private UUID questionId;
     private String question;
     private String answer;
@@ -30,9 +29,7 @@ public class Question {
         return questionId;
     }
 
-    public void setQuestionId() {
-        this.questionId = UUID.randomUUID();
-    }
+    public void setQuestionId(UUID questionId) { this.questionId = questionId;}
 
     public String getQuestion() {
         return question;
