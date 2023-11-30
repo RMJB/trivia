@@ -47,7 +47,5 @@ Download/clone this repo
 3. Want more questions refresh the page.
 
 ## To do 
-1. Add more tests
-2. Improve FE with instructions
-3. (Optional) Containerize docker?
-4. (Optional) rewrite based on openApi/Swagger?
+1. Add more tests, would have been faster with proper injection.
+2. (Optional) rewrite based on openApi/Swagger?
