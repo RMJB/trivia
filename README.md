@@ -55,6 +55,5 @@ Download/clone this repo
 3. Want more questions refresh the page.
 
 ## Potential improvements
-1. Rewrite based on openApi/Swagger contract
-2. Add contract and frontend testing
-3. Deploy in cloud
+1. Deploy in cloud
+2. Implement frontend tests
