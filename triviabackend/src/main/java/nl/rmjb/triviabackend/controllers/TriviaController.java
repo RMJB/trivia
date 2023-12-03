@@ -4,7 +4,6 @@ import nl.rmjb.triviabackend.models.Question;
 import nl.rmjb.triviabackend.services.QuestionService;
 import nl.rmjb.triviabackend.views.AnswerRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,8 +25,8 @@ public class TriviaController {
     }
 
     @PostMapping("/checkanswers")
-    public ResponseEntity<Boolean> checkAnswer(@RequestBody AnswerRequest answerRequest) {
-        return ResponseEntity.ok(questionService.checkAnswer(answerRequest));
+    public boolean checkAnswer(@RequestBody AnswerRequest answerRequest) {
+        return questionService.checkAnswer(answerRequest);
     }
 }
 

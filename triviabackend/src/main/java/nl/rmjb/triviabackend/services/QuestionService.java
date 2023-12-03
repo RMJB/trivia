@@ -17,12 +17,13 @@ import java.util.stream.Collectors;
 @Service
 public class QuestionService {
     private static final String TRIVIA_API_URL = "https://opentdb.com/api.php?amount=5&type=multiple";
-    private List<AnswerRequest> answers = new ArrayList<>();
+    private final List<AnswerRequest> answers = new ArrayList<>();
+    private RestTemplate restTemplate;
 
     public List<Question> getQuestions() {
         try {
             // Get new questions every time
-            TriviaApiResponse response = new RestTemplate().getForObject(TRIVIA_API_URL, TriviaApiResponse.class);
+            TriviaApiResponse response = restTemplate.getForObject(TRIVIA_API_URL, TriviaApiResponse.class);
 
             // Check for API-defined error codes
             if (response != null && response.getResponse_code() != 0) {
@@ -98,5 +99,4 @@ public class QuestionService {
                 throw new RuntimeException("Unexpected response code: " + responseCode);
         }
     }
-
 }
