@@ -22,7 +22,7 @@ Download/clone this repo
     ```bash
     cd triviabackend
     mvn clean install
-    java -jar target/triviabackend-0.0.1-SNAPSHOT.jar
+    java -jar target/triviabackend-0.0.2-SNAPSHOT.jar
 3. The backend will be accessible at http://localhost:8080.
 
 ## Running the Frontend (Angular)
@@ -36,6 +36,14 @@ Download/clone this repo
 3. The frontend will be accessible at http://localhost:4200.
 
 # Option 2
+
+## Package JAR
+1. Run the following commands
+    ```bash
+    cd triviabackend
+    mvn clean install
+
+## Run with docker compose
 1. Using the provided docker-compose.yml
 2. Run the following command
     ```bash
