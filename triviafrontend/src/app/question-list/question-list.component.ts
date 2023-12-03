@@ -36,7 +36,7 @@ export class QuestionListComponent implements OnInit {
         (response) => {
           console.log('Answer response:', response);
 
-          const isCorrect = response.correct;
+          const isCorrect = response;
 
           if (!isCorrect) {
             this.incorrectAttempts[questionId] = true;
@@ -53,5 +53,9 @@ export class QuestionListComponent implements OnInit {
 
   isCorrectChoice(index: number, question: any): boolean {
     return question.answerChoices[index] === question.answer;
+  }
+
+  refreshPage() {
+    window.location.reload();
   }
 }

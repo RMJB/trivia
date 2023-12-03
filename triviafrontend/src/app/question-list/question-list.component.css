@@ -1,14 +1,4 @@
-
-body {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.instruction-box {
+.loading-message {
   width: 75%;
   max-width: 600px;
   margin: auto;
@@ -16,7 +6,7 @@ body {
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #d4edda;
+  background-color: #f1e7c498;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 

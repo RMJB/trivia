@@ -6,11 +6,13 @@ import { HttpClientModule  } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionListComponent } from './question-list/question-list.component';
+import { InstructionBoxComponent } from './instruction-box/instruction-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    InstructionBoxComponent
   ],
   imports: [
     BrowserModule,

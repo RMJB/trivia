@@ -1,0 +1,11 @@
+.instruction-box {
+  width: 75%;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #d4edda;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,35 +1,30 @@
 package nl.rmjb.triviabackend.models;
 
-import org.apache.commons.text.StringEscapeUtils;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
+@Data
 public class Question {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID questionId;
     private String question;
-    private String answer;
-    private List<String> incorrectAnswers;
     private List<String> answerChoices;
 
-    public Question(String question, String answer, List<String> incorrectAnswers) {
-        this.questionId = UUID.randomUUID();
-        this.question = StringEscapeUtils.unescapeHtml4(question);
-        this.answer = StringEscapeUtils.unescapeHtml4(answer);
-        this.incorrectAnswers = incorrectAnswers.stream()
-                .map(StringEscapeUtils::unescapeHtml4)
-                .collect(Collectors.toList());
-        this.setAnswerChoices(this.incorrectAnswers, answer);
-    }
 
     public UUID getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(UUID questionId) { this.questionId = questionId;}
+    public void setQuestionId() {
+        this.questionId = UUID.randomUUID();
+    }
 
     public String getQuestion() {
         return question;
@@ -39,30 +34,11 @@ public class Question {
         this.question = question;
     }
 
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
-    public List<String> getIncorrectAnswers() {
-        return incorrectAnswers;
-    }
-
-    public void setIncorrectAnswers(List<String> incorrectAnswers) {
-        this.incorrectAnswers = incorrectAnswers;
-    }
-
     public List<String> getAnswerChoices() {
         return answerChoices;
     }
 
-    public void setAnswerChoices(List<String> incorrectAnswers, String correctAnswer) {
-        this.answerChoices = new ArrayList<>();
-        this.answerChoices.addAll(incorrectAnswers);
-        this.answerChoices.add(correctAnswer);
-        Collections.shuffle(this.answerChoices);
+    public void setAnswerChoices(List<String> answerChoices) {
+        this.answerChoices = answerChoices;
     }
 }
