@@ -46,6 +46,7 @@ Download/clone this repo
 2. Answer the questions
 3. Want more questions refresh the page.
 
-## To do 
-1. Add more tests, would have been faster with proper injection.
-2. (Optional) rewrite based on openApi/Swagger?
+## Potential improvements
+1. Rewrite based on openApi/Swagger contract
+2. Add contract and frontend testing
+3. Deploy in cloud
