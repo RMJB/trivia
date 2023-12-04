@@ -8,7 +8,7 @@ Make sure you have the following installed on your machine:
 
 - Node.js and npm 
 - Angular CLI 
-- Java Development Kit (JDK) 
+- Java Development Kit (JDK 17) 
 - Maven 
 - Docker (Optional)
 
