@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class QuestionService {
     private static final String TRIVIA_API_URL = "https://opentdb.com/api.php?amount=5&type=multiple";
     private final List<AnswerRequest> answers = new ArrayList<>();
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
 
     public List<Question> getQuestions() {
         try {
